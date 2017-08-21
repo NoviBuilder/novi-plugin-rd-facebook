@@ -1,0 +1,86 @@
+/** RD Facebook Feed */
+.post-facebook {
+    position: relative;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.15);
+}
+
+.post-facebook .post-meta:before, .post-facebook .post-meta:after {
+    content: " ";
+    display: table;
+}
+
+.post-facebook .post-meta:after {
+    clear: both;
+}
+
+.post-facebook .post-meta time {
+    margin: 5px 0 8px 0;
+    font-size: 15px;
+    color: #9b9b9b;
+}
+
+.post-facebook .post-meta + * {
+    margin-top: 20px;
+}
+
+.post-facebook .post-meta_profile-img {
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.post-facebook .post-meta_profile-name {
+    display: inline-block;
+    margin: 0;
+}
+
+.post-facebook .post-message {
+    text-align: left;
+    overflow: hidden;
+}
+
+.post-facebook .post-message > a {
+    color: #55bbeb;
+}
+
+.post-facebook .post-attachment {
+    margin: 25px 0;
+    position: relative;
+}
+
+.post-facebook .post-attachment-wrap {
+    margin-top: 15px;
+}
+
+.post-facebook .post-attachment-wrap > p {
+    margin-top: 5px;
+    color: #9b9b9b;
+}
+
+.post-facebook .icon-xxs {
+    font-size: 20px;
+}
+
+.post-facebook .post-comments h6 {
+    margin-bottom: 0;
+}
+
+.post-facebook .post-comments .post-comment {
+    padding: 15px 0;
+}
+
+.post-facebook .post-comments .post-comment .comment-message {
+    margin-top: 10px;
+}
+
+@media (min-width: 1200px) {
+    .post-facebook {
+        padding: 24px 30px 30px 30px;
+    }
+
+    .post-facebook .post-attachment {
+        padding-left: 20px;
+        border-left: 1px solid #d9d9d9;
+    }
+}
