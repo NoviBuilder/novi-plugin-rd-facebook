@@ -2,7 +2,7 @@ const RadioGroup = novi.ui.radioGroup;
 const Input = novi.ui.input;
 const Component = novi.react.Component;
 const React = novi.react.React;
-
+const Language = novi.language;
 export default class Body extends Component{
     constructor(props){
         super(props);
@@ -26,13 +26,14 @@ export default class Body extends Component{
         this._renderInputName = this._renderInputName.bind(this);
         this._renderAccesInput = this._renderAccesInput.bind(this);
         this._handleRadioButtonClick = this._handleRadioButtonClick.bind(this);
+        this.messages = Language.getDataByKey("novi-plugin-rd-facebook");
     }
 
     render(){
         return (
             <div className="facebook-plugin-wrap" style={{"padding": "0 12px", "display": "flex", "flexDirection": "column", "justifyContent": "center", "height": "100%", "color": "#6E778A"}}>
                 <p className="novi-label" style={{"marginTop": "0"}}>
-                    Facebook Page Type:
+                    {this.messages.editor.body.pageType}
                 </p>
                 <RadioGroup options={["page", "group"]} value={this.state.type} onChange={this._handleRadioButtonClick}/>
                 {this._renderAccesInput()}
@@ -51,7 +52,7 @@ export default class Body extends Component{
         return (
             <div>
                 <p className="novi-label" style={{marginTop: 15}}>
-                    {this.state.type === "group" ? "Facebook Group:" : "Facebook Page:"}
+                    {this.state.type === "group" ? this.messages.editor.body.group : this.messages.editor.body.page}
                 </p>
                 <Input onChange={this._handleNameChange} value={this.state.id}/>
             </div>
@@ -62,7 +63,7 @@ export default class Body extends Component{
         return (
             <div>
                 <p className="novi-label" style={{marginTop: 15}}>
-                    Facebook Access Token:
+                    {this.messages.editor.body.accessToken}
                 </p>
                 <Input onChange={this._handleAccessChange} value={this.state.access}/>
             </div>
